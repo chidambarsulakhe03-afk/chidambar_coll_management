@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Student | Student Management System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <div class="brand">
+            <div class="brand-mark"><i class="bi bi-mortarboard-fill"></i></div>
+            <div class="brand-text">Student<br/>Management</div>
+          </div>
+        </div>
+
+        <nav class="sidebar-nav" aria-label="Sidebar navigation">
+          <a href="dashboard.html" class="sidebar-link"><i class="bi bi-grid-1x2-fill"></i><span>Dashboard</span></a>
+          <a href="students.html" class="sidebar-link"><i class="bi bi-people-fill"></i><span>Students</span></a>
+          <a href="add-student.html" class="sidebar-link active"><i class="bi bi-person-plus-fill"></i><span>Add Student</span></a>
+          <a href="search.html" class="sidebar-link"><i class="bi bi-search"></i><span>Search Students</span></a>
+          <a href="profile.html" class="sidebar-link"><i class="bi bi-person-circle"></i><span>Profile</span></a>
+          <a href="settings.html" class="sidebar-link"><i class="bi bi-gear-fill"></i><span>Settings</span></a>
+          <a href="login.html" class="sidebar-link"><i class="bi bi-box-arrow-right"></i><span>Logout</span></a>
+        </nav>
+
+        <div class="sidebar-footer">
+          <div class="user-pill">
+            <div class="user-avatar">AD</div>
+            <div class="user-meta">
+              <strong>Admin</strong>
+              <small>College Office</small>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <main class="main-panel">
+        <header class="topbar">
+          <div class="topbar-inner">
+            <div class="d-flex align-items-center gap-3">
+              <button class="btn btn-light mobile-menu-btn" data-sidebar-toggle aria-label="Open menu">
+                <i class="bi bi-list"></i>
+              </button>
+              <h1 class="page-title">Add New Student</h1>
+            </div>
+            <div class="topbar-tools">
+              <div class="user-pill">
+                <div class="user-avatar">AD</div>
+                <div class="user-meta">
+                  <strong>Admin</strong>
+                  <small>admin@college.edu</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <div class="content-area">
+          <div class="form-page">
+            <form class="form-card" data-validate data-redirect="students.html" data-mode="add" novalidate>
+              <div class="section-header">
+                <h2 class="mb-0">Student Information</h2>
+              </div>
+
+              <div class="form-grid">
+                <div class="full-width">
+                  <label class="form-label">Profile Photo</label>
+                  <div class="input-file">
+                    <div class="image-picker">
+                      <div class="preview-box mb-3">
+                        <i class="bi bi-person-bounding-box" style="font-size: 2.5rem; color: var(--muted-color);"></i>
+                      </div>
+                      <div>Upload profile image</div>
+                    </div>
+                    <input type="file" accept="image/*" />
+                  </div>
+                </div>
+
+                <div>
+                  <label for="fullName" class="form-label">Full Name</label>
+                  <input id="fullName" name="fullName" type="text" class="form-control" required />
+                </div>
+
+                <div>
+                  <label for="dob" class="form-label">Date of Birth</label>
+                  <input id="dob" name="dob" type="date" class="form-control" required />
+                </div>
+
+                <div>
+                  <label for="gender" class="form-label">Gender</label>
+                  <select id="gender" class="form-select" required>
+                    <option value="">Select gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label for="phone" class="form-label">Phone Number</label>
+                  <input id="phone" name="phone" type="tel" class="form-control" required />
+                </div>
+
+                <div>
+                  <label for="studentEmail" class="form-label">Email</label>
+                  <input id="studentEmail" name="studentEmail" type="email" class="form-control" required />
+                </div>
+
+                <div>
+                  <label for="studentId" class="form-label">Student ID</label>
+                  <input id="studentId" name="studentId" type="text" class="form-control" required />
+                </div>
+
+                <div>
+                  <label for="usn" class="form-label">USN / Roll Number</label>
+                  <input id="usn" name="usn" type="text" class="form-control" required />
+                </div>
+
+                <div>
+                  <label for="department" class="form-label">Department</label>
+                  <select id="department" class="form-select" required>
+                    <option value="">Select department</option>
+                    <option value="Computer Science">Computer Science</option>
+                    <option value="Electronics">Electronics</option>
+                    <option value="Mechanical">Mechanical</option>
+                    <option value="Civil">Civil</option>
+                    <option value="Electrical">Electrical</option>
+                    <option value="Information Technology">Information Technology</option>
+                    <option value="Artificial Intelligence">Artificial Intelligence</option>
+                    <option value="Biotechnology">Biotechnology</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label for="course" class="form-label">Course</label>
+                  <input id="course" name="course" type="text" class="form-control" required />
+                </div>
+
+                <div>
+                  <label for="semester" class="form-label">Semester</label>
+                  <select id="semester" class="form-select" required>
+                    <option value="">Select semester</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label for="admissionDate" class="form-label">Admission Date</label>
+                  <input id="admissionDate" name="admissionDate" type="date" class="form-control" required />
+                </div>
+
+                <div class="full-width">
+                  <label for="address" class="form-label">Address</label>
+                  <textarea id="address" name="address" class="form-control" rows="3" required></textarea>
+                </div>
+
+                <div>
+                  <label for="city" class="form-label">City</label>
+                  <input id="city" name="city" type="text" class="form-control" required />
+                </div>
+
+                <div>
+                  <label for="state" class="form-label">State</label>
+                  <input id="state" name="state" type="text" class="form-control" required />
+                </div>
+
+                <div>
+                  <label for="pincode" class="form-label">PIN Code</label>
+                  <input id="pincode" name="pincode" type="text" class="form-control" required />
+                </div>
+              </div>
+
+              <div class="form-actions">
+                <a href="students.html" class="btn btn-light">Cancel</a>
+                <button type="submit" class="btn btn-primary">Save Student</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <div class="sidebar-overlay"></div>
+    <div id="toastContainer" class="toast-container"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

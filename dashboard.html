@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard | Student Management System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <div class="brand">
+            <div class="brand-mark"><i class="bi bi-mortarboard-fill"></i></div>
+            <div class="brand-text">Student<br/>Management</div>
+          </div>
+        </div>
+
+        <nav class="sidebar-nav" aria-label="Sidebar navigation">
+          <a href="dashboard.html" class="sidebar-link active"><i class="bi bi-grid-1x2-fill"></i><span>Dashboard</span></a>
+          <a href="students.html" class="sidebar-link"><i class="bi bi-people-fill"></i><span>Students</span></a>
+          <a href="add-student.html" class="sidebar-link"><i class="bi bi-person-plus-fill"></i><span>Add Student</span></a>
+          <a href="search.html" class="sidebar-link"><i class="bi bi-search"></i><span>Search Students</span></a>
+          <a href="profile.html" class="sidebar-link"><i class="bi bi-person-circle"></i><span>Profile</span></a>
+          <a href="settings.html" class="sidebar-link"><i class="bi bi-gear-fill"></i><span>Settings</span></a>
+          <a href="login.html" class="sidebar-link"><i class="bi bi-box-arrow-right"></i><span>Logout</span></a>
+        </nav>
+
+        <div class="sidebar-footer">
+          <div class="user-pill">
+            <div class="user-avatar">AD</div>
+            <div class="user-meta">
+              <strong>Admin</strong>
+              <small>College Office</small>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <main class="main-panel">
+        <header class="topbar">
+          <div class="topbar-inner">
+            <div class="d-flex align-items-center gap-3">
+              <button class="btn btn-light mobile-menu-btn" data-sidebar-toggle aria-label="Open menu">
+                <i class="bi bi-list"></i>
+              </button>
+              <h1 class="page-title">Dashboard</h1>
+            </div>
+
+            <div class="topbar-tools">
+              <div class="search-box">
+                <input type="search" placeholder="Search students" aria-label="Search students" />
+                <i class="bi bi-search"></i>
+              </div>
+              <button class="icon-button" aria-label="Notifications"><i class="bi bi-bell"></i></button>
+              <button class="icon-button" data-theme-toggle aria-label="Dark mode toggle"><i class="bi bi-moon-stars"></i></button>
+              <div class="user-pill">
+                <div class="user-avatar">AD</div>
+                <div class="user-meta">
+                  <strong>Admin</strong>
+                  <small>admin@college.edu</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <div class="content-area">
+          <section class="page-section welcome-box">
+            <div class="d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-3">
+              <div>
+                <h2 class="mb-1">Welcome back, Admin</h2>
+                <p class="mb-0 text-muted">Here's what's happening with your students today.</p>
+              </div>
+              <a href="add-student.html" class="btn btn-primary"><i class="bi bi-person-plus me-2"></i>Add Student</a>
+            </div>
+          </section>
+
+          <section class="page-section dashboard-grid">
+            <article class="stat-card">
+              <div class="stat-card-head">
+                <div class="stat-icon"><i class="bi bi-people-fill"></i></div>
+                <span class="badge badge-secondary">+12.5%</span>
+              </div>
+              <p class="stat-value">1,248</p>
+              <p class="stat-label">Total Students</p>
+              <div class="stat-trend"><i class="bi bi-arrow-up-right"></i> Compared to last month</div>
+            </article>
+
+            <article class="stat-card">
+              <div class="stat-card-head">
+                <div class="stat-icon" style="background: rgba(59,130,246,.1);"><i class="bi bi-gender-male"></i></div>
+                <span class="badge badge-secondary">+8.2%</span>
+              </div>
+              <p class="stat-value">720</p>
+              <p class="stat-label">Male Students</p>
+              <div class="stat-trend"><i class="bi bi-arrow-up-right"></i> 58% of cohort</div>
+            </article>
+
+            <article class="stat-card">
+              <div class="stat-card-head">
+                <div class="stat-icon" style="background: rgba(244,114,182,.1); color: #db2777;"><i class="bi bi-gender-female"></i></div>
+                <span class="badge badge-secondary">+10.1%</span>
+              </div>
+              <p class="stat-value">528</p>
+              <p class="stat-label">Female Students</p>
+              <div class="stat-trend"><i class="bi bi-arrow-up-right"></i> 42% of cohort</div>
+            </article>
+
+            <article class="stat-card">
+              <div class="stat-card-head">
+                <div class="stat-icon" style="background: rgba(16,185,129,.1); color: #059669;"><i class="bi bi-building"></i></div>
+                <span class="badge badge-secondary">+2 new</span>
+              </div>
+              <p class="stat-value">8</p>
+              <p class="stat-label">Departments</p>
+              <div class="stat-trend"><i class="bi bi-arrow-up-right"></i> Active programs</div>
+            </article>
+          </section>
+
+          <section class="page-section chart-grid">
+            <article class="module-card">
+              <div class="module-header">
+                <h5>Student Distribution</h5>
+                <span class="badge badge-secondary">Departments</span>
+              </div>
+              <div class="module-body">
+                <div class="chart-wrapper">
+                  <canvas id="departmentChart"></canvas>
+                </div>
+              </div>
+            </article>
+
+            <article class="module-card">
+              <div class="module-header">
+                <h5>Gender Distribution</h5>
+                <span class="badge badge-secondary">Overview</span>
+              </div>
+              <div class="module-body">
+                <div class="chart-wrapper">
+                  <canvas id="genderChart"></canvas>
+                </div>
+              </div>
+            </article>
+          </section>
+
+          <section class="page-section module-card">
+            <div class="module-header">
+              <h3>Recent Students</h3>
+              <a href="students.html" class="btn btn-outline-primary">View All Students</a>
+            </div>
+            <div class="table-responsive">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Student</th>
+                    <th>USN</th>
+                    <th>Department</th>
+                    <th>Semester</th>
+                    <th>Date Added</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody id="recentStudentsBody"></tbody>
+              </table>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+
+    <div class="sidebar-overlay"></div>
+    <div id="toastContainer" class="toast-container"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

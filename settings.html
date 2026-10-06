@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Settings | Student Management System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <div class="brand">
+            <div class="brand-mark"><i class="bi bi-mortarboard-fill"></i></div>
+            <div class="brand-text">Student<br/>Management</div>
+          </div>
+        </div>
+
+        <nav class="sidebar-nav" aria-label="Sidebar navigation">
+          <a href="dashboard.html" class="sidebar-link"><i class="bi bi-grid-1x2-fill"></i><span>Dashboard</span></a>
+          <a href="students.html" class="sidebar-link"><i class="bi bi-people-fill"></i><span>Students</span></a>
+          <a href="add-student.html" class="sidebar-link"><i class="bi bi-person-plus-fill"></i><span>Add Student</span></a>
+          <a href="search.html" class="sidebar-link"><i class="bi bi-search"></i><span>Search Students</span></a>
+          <a href="profile.html" class="sidebar-link"><i class="bi bi-person-circle"></i><span>Profile</span></a>
+          <a href="settings.html" class="sidebar-link active"><i class="bi bi-gear-fill"></i><span>Settings</span></a>
+          <a href="login.html" class="sidebar-link"><i class="bi bi-box-arrow-right"></i><span>Logout</span></a>
+        </nav>
+
+        <div class="sidebar-footer">
+          <div class="user-pill">
+            <div class="user-avatar">AD</div>
+            <div class="user-meta">
+              <strong>Admin</strong>
+              <small>College Office</small>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <main class="main-panel">
+        <header class="topbar">
+          <div class="topbar-inner">
+            <div class="d-flex align-items-center gap-3">
+              <button class="btn btn-light mobile-menu-btn" data-sidebar-toggle aria-label="Open menu">
+                <i class="bi bi-list"></i>
+              </button>
+              <h1 class="page-title">Settings</h1>
+            </div>
+            <div class="topbar-tools">
+              <div class="user-pill">
+                <div class="user-avatar">AD</div>
+                <div class="user-meta">
+                  <strong>Admin</strong>
+                  <small>admin@college.edu</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <div class="content-area">
+          <div class="page-section">
+            <div class="settings-card mb-4">
+              <h3 class="mb-3">Account Settings</h3>
+              <div class="row g-3">
+                <div class="col-md-4">
+                  <label for="settingsName" class="form-label">Name</label>
+                  <input id="settingsName" type="text" class="form-control" value="Dr. Aisha Verma" />
+                </div>
+                <div class="col-md-4">
+                  <label for="settingsEmail" class="form-label">Email</label>
+                  <input id="settingsEmail" type="email" class="form-control" value="aisha.verma@college.edu" />
+                </div>
+                <div class="col-md-4">
+                  <label for="settingsPhone" class="form-label">Phone</label>
+                  <input id="settingsPhone" type="tel" class="form-control" value="+91 9876543211" />
+                </div>
+              </div>
+            </div>
+
+            <div class="settings-card mb-4">
+              <h3 class="mb-3">Security</h3>
+              <div class="setting-row">
+                <div>
+                  <strong>Change Password</strong>
+                  <div class="text-muted">Update your login credentials regularly.</div>
+                </div>
+                <button class="btn btn-primary">Change Password</button>
+              </div>
+              <div class="setting-row">
+                <div>
+                  <strong>Two-factor authentication</strong>
+                  <div class="text-muted">Add an extra layer of security.</div>
+                </div>
+                <div class="toggle-switch active" aria-label="Two-factor authentication toggle"></div>
+              </div>
+            </div>
+
+            <div class="settings-card mb-4">
+              <h3 class="mb-3">Appearance</h3>
+              <div class="setting-row">
+                <div>
+                  <strong>Dark mode</strong>
+                  <div class="text-muted">Switch to a darker interface.</div>
+                </div>
+                <button class="toggle-switch" data-theme-toggle aria-label="Toggle dark mode"></button>
+              </div>
+            </div>
+
+            <div class="settings-card">
+              <h3 class="mb-3">Notifications</h3>
+              <div class="setting-row">
+                <div>
+                  <strong>Email notifications</strong>
+                  <div class="text-muted">Receive updates via email.</div>
+                </div>
+                <div class="toggle-switch active" aria-label="Email notifications toggle"></div>
+              </div>
+              <div class="setting-row">
+                <div>
+                  <strong>System notifications</strong>
+                  <div class="text-muted">Get alerts about student activity.</div>
+                </div>
+                <div class="toggle-switch active" aria-label="System notifications toggle"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <div class="sidebar-overlay"></div>
+    <div id="toastContainer" class="toast-container"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
